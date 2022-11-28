@@ -8,5 +8,3 @@ class Home(Resource):
         return {'ism':name}
 
 api.add_resource(Home, "/<string:name>")
-
-app.run(debug=True)
