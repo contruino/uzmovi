@@ -22,12 +22,9 @@ class Home(Resource):
 
         for kn in kino:
             films=kn.find(class_="short-images-link").get("href")
-            print(films)
             driver.get(films)
-        
             info=driver.find_element(By.CLASS_NAME, "finfo").get_attribute("innerText")
-            print(info)
-            return "bajarildi"
+            return info, films
 
 api.add_resource(Home, "/<string:search>")
 
